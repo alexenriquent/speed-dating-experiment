@@ -2,6 +2,7 @@ library(rpart)
 library(rpart.plot)
 library(RColorBrewer)
 library(partykit)
+library(ROCR)
 
 data.format <- function(data) {
   data$dec_o <- as.character(data$dec_o) 
@@ -33,15 +34,18 @@ confusion.analysis <- function(matrix) {
   accuracy <- (tp + tn) / (tp + tn + fp + fn)
 }
 
-tree <- dec_o ~ attr_o + intel_o + sinc_o + fun_o + shar_o + gender
+tree <- dec_o ~ attr_o + intel_o + sinc_o + fun_o + amb_o + shar_o + gender
 rpart <- rpart(tree, data = training.data, method = "class")
+
+rparty <- as.party(rpart)
+plot(rparty, type = "simple")
 
 prediction <- predict(rpart, test.data, type = "class")
 truth <- test.data$dec_o
 
-rparty <- as.party(rpart)
-rparty
-plot(rparty, type = "simple")
+roc <- prediction(predict(rpart, newdata = test.data, type = "prob")[, 2], test.data$dec_o)
+plot(performance(roc, "tpr", "fpr"), colorize = TRUE)
+abline(0, 1, lty = 3)
 
 confusion <- confusion.matrix(prediction, truth)
 confusion
