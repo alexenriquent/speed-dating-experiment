@@ -3,12 +3,12 @@ library(corrplot)
 data <- read.csv("dataset.csv", header = TRUE, stringsAsFactors = FALSE)
 
 attributes <- data[, 25:30]
-male_attributes <- data[data$gender == 1, 25:30]
-female_attributes <- data[data$gender == 0, 25:30]
+male.attributes <- data[data$gender == 1, 25:30]
+female.attributes <- data[data$gender == 0, 25:30]
 
 correlation <- cor(attributes, use = "complete.obs")
-male_correlation <- cor(male_attributes, use = "complete.obs")
-female_correlation <- cor(female_attributes, use = "complete.obs")
+male_correlation <- cor(male.attributes, use = "complete.obs")
+female_correlation <- cor(female.attributes, use = "complete.obs")
 
 plot.correlation <- function(correlation, title) {
   corrplot(correlation, method = "shade", title = title, 
