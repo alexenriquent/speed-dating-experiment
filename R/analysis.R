@@ -7,11 +7,36 @@ confusion.matrix <- function(prediction, truth) {
 }
 
 confusion.analysis <- function(matrix) {
-  tp <- matrix[1, 1]
-  fn <- matrix[1, 2]
-  fp <- matrix[2, 1]
-  tn <- matrix[2, 2]
+  TP <- matrix[1, 1]
+  FN <- matrix[1, 2]
+  FP <- matrix[2, 1]
+  TN <- matrix[2, 2]
 
-  accuracy <- (tp + tn) / (tp + tn + fp + fn)
-  cat(paste("Accuracy:", accuracy))
+  ACC <- (TP + TN) / (TP + TN + FP + FN)
+  TPR <- TP / (TP + FN)
+  TNR <- TN / (FP + TN)
+  FPR <- FP / (FP + TN)
+  FNR <- FN / (FN + TP)
+  PPV <- TP / (TP + FP)
+  NPV <- TN / (TN + FN)
+  FDR <- FP / (FP + TP)
+  F1 <- (2 * TPR * PPV) / (TPR + PPV)
+  
+  cat('\n')
+  print(matrix)
+  cat(paste("\nAccuracy:\t\t   ", ACC,
+            "\nSensitivity/Recall:\t   ", TPR,
+            "\nSpecificity:\t\t   ", TNR,
+            "\nFall-out:\t\t   ", FPR,
+            "\nMiss rate:\t\t   ", FNR,
+            "\nPrecision:\t\t   ", PPV,
+            "\nNegative predictive value: ", NPV,
+            "\nFalse discovery rate:\t   ", FDR,
+            "\nF-measure:\t\t   ", F1, '\n'))
+}
+
+rpart.analysis <- function(rpart) {
+  cat('\n')
+  print(rpart)
+  cat('\n')
 }

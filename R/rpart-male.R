@@ -29,3 +29,6 @@ plot(male.rparty, type = "simple")
 
 male.confusion <- confusion.matrix(male.prediction, male.truth)
 male.confusion
+
+rpart.analysis(male.rpart.pruned)
+confusion.analysis(male.confusion)
