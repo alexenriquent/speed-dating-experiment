@@ -1,0 +1,30 @@
+> rpart.analysis(female.rpart.pruned)
+
+n=3101 (83 observations deleted due to missingness)
+
+node), split, n, loss, yval, (yprob)
+      * denotes terminal node
+
+ 1) root 3101 1495 no (0.5178975 0.4821025)  
+   2) attr_o< 6.25 1568  406 no (0.7410714 0.2589286) *
+   3) attr_o>=6.25 1533  444 yes (0.2896282 0.7103718)  
+     6) fun_o< 6.25 391  194 yes (0.4961637 0.5038363)  
+      12) shar_o< 4.5 135   41 no (0.6962963 0.3037037) *
+      13) shar_o>=4.5 256  100 yes (0.3906250 0.6093750) *
+     7) fun_o>=6.25 1142  250 yes (0.2189142 0.7810858) *
+
+> confusion.analysis(female.confusion)
+
+           Pred:yes Pred:no
+Actual:yes      376     112
+Actual:no       104     408
+
+Accuracy:                   0.784 
+Sensitivity/Recall:         0.770491803278688 
+Specificity:                0.796875 
+Fall-out:                   0.203125 
+Miss rate:                  0.229508196721311 
+Precision:                  0.783333333333333 
+Negative predictive value:  0.784615384615385 
+False discovery rate:       0.216666666666667 
+F-measure:                  0.776859504132231 
