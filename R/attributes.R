@@ -1,6 +1,6 @@
 library(corrplot)
 
-data <- read.csv("dataset.csv", header = TRUE, stringsAsFactors = FALSE)
+data <- read.csv("data/dataset.csv", header = TRUE, stringsAsFactors = FALSE)
 
 attributes <- data[, 25:30]
 male.attributes <- data[data$gender == 1, 25:30]
