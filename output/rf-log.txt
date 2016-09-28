@@ -1,0 +1,35 @@
+> rf.analysis(rf)  
+Call:
+ randomForest(formula = as.factor(dec_o) ~ attr_o + intel_o + sinc_o + fun_o + amb_o + shar_o, data = train, importance = TRUE) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 2
+
+        OOB estimate of  error rate: 27.38%
+Confusion matrix:
+     0    1 class.error
+0 2800  901   0.2434477
+1  845 1832   0.3156518
+
+Importance:
+                0         1 MeanDecreaseAccuracy MeanDecreaseGini
+attr_o  69.246698 139.52079           157.027493         618.2059
+intel_o -2.866846  23.45674            18.361479         247.8271
+sinc_o  -4.809755  45.29150            35.999591         293.3023
+fun_o   32.829674  48.99429            66.838527         413.3848
+amb_o    1.356246  10.06726             8.642003         308.4258
+shar_o  28.140793  69.75619            74.036037         487.0278
+> confusion.analysis(confusion)
+           Pred:yes Pred:no
+Actual:yes      595     243
+Actual:no       275     887
+
+Accuracy:		                0.741 
+Sensitivity/Recall:	        0.710023866348449 
+Specificity:		            0.763339070567986 
+Fall-out:		                0.236660929432014 
+Miss rate:		              0.289976133651551 
+Precision:		              0.683908045977011 
+Negative predictive value:  0.784955752212389 
+False discovery rate:	      0.316091954022989 
+F-measure:		              0.69672131147541 

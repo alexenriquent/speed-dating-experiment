@@ -1,28 +1,27 @@
-> rpart.analysis(rpart.pruned)
-
-n=6208 (170 observations deleted due to missingness)
+> rpart.analysis(rpart)
+n= 6378 
 
 node), split, n, loss, yval, (yprob)
       * denotes terminal node
 
-1) root 6208 2673 no (0.5694265 0.4305735)  
-  2) attr_o< 6.25 3362  773 no (0.7700773 0.2299227) *
-  3) attr_o>=6.25 2846  946 yes (0.3323963 0.6676037)  
-    6) shar_o< 4.5 411  159 no (0.6131387 0.3868613) *
-    7) shar_o>=4.5 2435  694 yes (0.2850103 0.7149897) *
-
+ 1) root 6378 2677 no (0.5802759 0.4197241)  
+   2) attr_o< 6.992849 3489  777 no (0.7773001 0.2226999) *
+   3) attr_o>=6.992849 2889  989 yes (0.3423330 0.6576670)  
+     6) shar_o< 5.807483 996  482 no (0.5160643 0.4839357)  
+      12) fun_o< 6.953038 480  177 no (0.6312500 0.3687500) *
+      13) fun_o>=6.953038 516  211 yes (0.4089147 0.5910853) *
+     7) shar_o>=5.807483 1893  475 yes (0.2509245 0.7490755) *
 > confusion.analysis(confusion)
-
            Pred:yes Pred:no
-Actual:yes      575     263
-Actual:no       213     949
+Actual:yes      555     283
+Actual:no       205     957
 
-Accuracy:                   0.762 
-Sensitivity/Recall:         0.686157517899761 
-Specificity:                0.816695352839931 
-Fall-out:                   0.183304647160069 
-Miss rate:                  0.313842482100239 
-Precision:                  0.729695431472081 
-Negative predictive value:  0.783003300330033 
-False discovery rate:       0.270304568527919 
-F-measure:                  0.707257072570726 
+Accuracy:		                0.756 
+Sensitivity/Recall:	        0.662291169451074 
+Specificity:		            0.823580034423408 
+Fall-out:		                0.176419965576592 
+Miss rate:		              0.337708830548926 
+Precision:		              0.730263157894737 
+Negative predictive value:  0.771774193548387 
+False discovery rate:	      0.269736842105263 
+F-measure:		              0.694618272841051 

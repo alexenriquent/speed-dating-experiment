@@ -22,7 +22,6 @@ confusion.analysis <- function(matrix) {
   FDR <- FP / (FP + TP)
   F1 <- (2 * TPR * PPV) / (TPR + PPV)
   
-  cat('\n')
   print(matrix)
   cat(paste("\nAccuracy:\t\t   ", ACC,
             "\nSensitivity/Recall:\t   ", TPR,
@@ -36,7 +35,11 @@ confusion.analysis <- function(matrix) {
 }
 
 rpart.analysis <- function(rpart) {
-  cat('\n')
   print(rpart)
-  cat('\n')
+}
+
+rf.analysis <- function(rf) {
+  print(rf)
+  cat("\nImportance:\n")
+  print(importance(rf))
 }
