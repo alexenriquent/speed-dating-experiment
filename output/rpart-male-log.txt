@@ -18,12 +18,12 @@ node), split, n, loss, yval, (yprob)
 Actual:yes      188     148
 Actual:no       115     549
 
-Accuracy:		                0.737 
-Sensitivity/Recall:	        0.55952380952381 
-Specificity:		            0.826807228915663 
-Fall-out:		                0.173192771084337 
-Miss rate:		              0.44047619047619 
-Precision:		              0.62046204620462 
+Accuracy:                   0.737 
+Sensitivity/Recall:         0.55952380952381 
+Specificity:                0.826807228915663 
+Fall-out:                   0.173192771084337 
+Miss rate:                  0.44047619047619 
+Precision:                  0.62046204620462 
 Negative predictive value:  0.787661406025825 
-False discovery rate:	      0.37953795379538 
-F-measure:		              0.588419405320814 
+False discovery rate:       0.37953795379538 
+F-measure:                  0.588419405320814 

@@ -24,12 +24,12 @@ shar_o  28.140793  69.75619            74.036037         487.0278
 Actual:yes      595     243
 Actual:no       275     887
 
-Accuracy:		                0.741 
-Sensitivity/Recall:	        0.710023866348449 
-Specificity:		            0.763339070567986 
-Fall-out:		                0.236660929432014 
-Miss rate:		              0.289976133651551 
-Precision:		              0.683908045977011 
+Accuracy:                   0.741 
+Sensitivity/Recall:         0.710023866348449 
+Specificity:                0.763339070567986 
+Fall-out:                   0.236660929432014 
+Miss rate:                  0.289976133651551 
+Precision:                  0.683908045977011 
 Negative predictive value:  0.784955752212389 
-False discovery rate:	      0.316091954022989 
-F-measure:		              0.69672131147541 
+False discovery rate:       0.316091954022989 
+F-measure:                  0.69672131147541 
