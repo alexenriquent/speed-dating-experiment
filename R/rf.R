@@ -11,6 +11,7 @@ test <- data[1:2000, ]
 rf <- randomForest(as.factor(dec_o) ~ attr_o + intel_o + sinc_o + fun_o + amb_o + shar_o, data = train, importance = TRUE)
 
 plot(rf, log = "y")
+legend("top", colnames(rf$err.rate), col = 1:3, cex = 0.8, fill = 1:3)
 varImpPlot(rf)
 
 roc <- prediction(predict(rf, newdata = test, type = "prob")[, 2], test$dec_o)
